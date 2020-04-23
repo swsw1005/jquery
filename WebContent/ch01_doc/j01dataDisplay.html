@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .table {
+            border: 1px solid red;
+            background-color: cyan;
+        }
+
+        .table tr th {
+            background: burlywood;
+        }
+
+        .table tr th,
+        .table tr td {
+            border: 1px solid red;
+        }
+
+        .hit {
+            font-style: italic;
+        }
+    </style>
+
+    <script>
+        // 스크립트
+        // $(function () {  ~~ });   ->  function (){}
+        // 전달하면 반대에서 변수로 받는다.(저장)
+
+        $(function () {
+            // 인풋데이터 입력하면  경고창으로 출력
+            $("#inputDataDisplayBtn2").click(function () {
+                var data = $("#inputData2").val();
+                alert(data);
+            });
+
+            // 테이블 클릭하면 클릭한 글 번호 경고창 뜨는 이벤트 처리
+            $(".trData2").click(function () {
+                var num = $(this).find(".no2").text();
+                alert(num);
+            });
+        });
+
+        function dataClick() {
+            console.log("데이터 보기!!!");
+            const aa = document.getElementById("inputData").value;
+            alert(aa);
+        }
+
+        function loadEvent() {
+            console.log("load event!!!");
+            const cnt = document.getElementsByClassName("no").length;
+            for (let i = 0; i < cnt; i++) {
+                document
+                    .getElementsByClassName("no")
+                [i].addEventListener("click", click_num);
+                document
+                    .getElementsByClassName("title")
+                [i].addEventListener("click", click_num);
+                document
+                    .getElementsByClassName("writer")
+                [i].addEventListener("click", click_num);
+                document
+                    .getElementsByClassName("hit")
+                [i].addEventListener("click", click_num);
+            }
+        }
+
+        function click_num(e) {
+            console.log("click!!!");
+            const a1 = e.target.parentNode;
+            const a3 = a1.childNodes[1].innerText;
+            console.log(a1);
+            console.log(a3);
+            alert(a3 + "!!!!");
+        }
+    </script>
+</head>
+
+<body onload="loadEvent()">
+    index.html
+    <hr />
+    JS
+    <hr />
+
+    <input id="inputData" value="smart" name="inputData" />
+    <!-- 인풋 타입 없으면 default = SUBMIT -->
+
+    <button id="inputDataDisplayBtn" onclick="dataClick()">
+        입력한 데이터 보기
+    </button>
+
+    <hr />
+
+    <table class="table">
+        <tr class="trData">
+            <th>글번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>조회수</th>
+        </tr>
+        <tr class="trData">
+            <td class="no">1</td>
+            <td class="title">자바?</td>
+            <td class="writer">박문자</td>
+            <td class="hit">2</td>
+        </tr>
+        <tr class="trData">
+            <td class="no">2</td>
+            <td class="title">오라클?</td>
+            <td class="writer">이영환</td>
+            <td class="hit">3</td>
+        </tr>
+        <tr class="trData">
+            <td class="no">3</td>
+            <td class="title">자바스크립트?</td>
+            <td class="writer">박기찬</td>
+            <td class="hit">4</td>
+        </tr>
+        <tr class="trData">
+            <td class="no">4</td>
+            <td class="title">jquery?</td>
+            <td class="writer">박기찬2</td>
+            <td class="hit">5</td>
+        </tr>
+    </table>
+    <hr />
+    <hr />
+    <hr />
+    제이쿼리로
+    <hr />
+
+    <input id="inputData2" value="smart" name="inputData2" />
+    <!-- 인풋 타입 없으면 default = SUBMIT -->
+    <button id="inputDataDisplayBtn2">입력한jquery 보기</button>
+
+    <hr />
+
+    <table class="table">
+        <tr class="trData2">
+            <th>글번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>조회수</th>
+        </tr>
+        <tr class="trData2">
+            <td class="no2">1</td>
+            <td class="title2">자바?</td>
+            <td class="writer2">박문자</td>
+            <td class="hit2">2</td>
+        </tr>
+        <tr class="trData2">
+            <td class="no2">2</td>
+            <td class="title2">오라클?</td>
+            <td class="writer2">이영환</td>
+            <td class="hit2">3</td>
+        </tr>
+        <tr class="trData2">
+            <td class="no2">3</td>
+            <td class="title2">자바스크립트?</td>
+            <td class="writer2">박기찬</td>
+            <td class="hit2">4</td>
+        </tr>
+        <tr class="trData2">
+            <td class="no2">4</td>
+            <td class="title2">jquery?</td>
+            <td class="writer2">박기찬2</td>
+            <td class="hit2">5</td>
+        </tr>
+    </table>
+</body>
+
+</html>

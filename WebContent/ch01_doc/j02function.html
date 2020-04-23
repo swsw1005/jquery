@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+
+    </style>
+    <script>
+        // 스크립트
+
+        function fun01() {
+            console.log("일반적인 함수호출");
+            console.log("fun01 !!!!");
+        }
+        // fun01();//일반적인 함수 호출
+
+        var fun1 = function () {
+            console.log("fun1!!!");
+        }
+
+        // fun1();
+
+        function exec(func) {
+            console.log("전달받은 함수 실행");
+            func();
+        }
+
+        exec(fun1);
+
+
+    </script>
+</head>
+
+<body>
+    <!-- 내용 -->
+
+</body>
+
+</html>

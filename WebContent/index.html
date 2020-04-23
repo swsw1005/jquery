@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <title>index</title>
+
+    <script>
+        $(function () {
+            console.log("hello world");
+        });
+    </script>
+
+    <style>
+        #aa_wrap {
+            width: 100%;
+            display: flex;
+            text-align: center;
+        }
+
+        #aa {
+            margin: auto;
+            width: 590px;
+            background: pink;
+            color: red;
+            border: 1px solid red;
+            text-align: center;
+            /* display: flex; */
+            /* position: absolute; */
+            /* left: 50%; */
+        }
+
+        h1 {
+            font-size: 6em;
+        }
+
+        h4 {
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="aa_wrap">
+        <div id="aa">
+            <h1>WARNING!!!</h1>
+            <hr />
+            <h4>오후수업 전용 톰캣입니다.</h4>
+        </div>
+    </div>
+
+    <br />
+
+    <div id="aa_wrap">
+        <div id="aa">
+            <h1>경고!!!</h1>
+            <hr />
+            <h4>오전수업중에는 돌아가 주십시오</h4>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #cal {
+            margin: auto;
+            background: skyblue;
+            width: 500px;
+            text-align: center;
+        }
+
+        .inputNum {
+            width: 120px;
+            height: 40px;
+            font-size: 30px;
+        }
+
+        .calBtn {
+            width: 40px;
+            height: 40px;
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 25px;
+        }
+
+        #removeBtn {
+            width: 160px;
+            height: 40px;
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 30px;
+        }
+
+        #result {
+            height: 40px;
+            /* margin: auto; */
+            font-size: 30px;
+            /* display: table-cell; */
+            /* text-align: center; */
+            /* vertical-align: middle; */
+            border: 1px solid red;
+        }
+    </style>
+    <script>
+        // 스크립트
+
+        $(function () {
+            $("#removeBtn").click(function () {
+                $("#a").val("");
+                $("#b").val("");
+
+                $("#result").empty();
+            });
+
+            $("#addBtn").click(function () {
+                console.log("addBtn");
+
+                // var func = function () {
+                //     var num1 = $("#a").val();
+                //     var num2 = $("#b").val();
+                //     return num1 + "+" + num2 + "=" + (Number(num1) + Number(num2));
+                // };
+                // $("#result").empty();
+                // $("#result").append("<div> 웹짱 계산기 </div>");
+                // $("#result").append("<div>" + func() + "</div>");
+                // $("#result").append("<div> 연락처 : swsw@swsw.com </div>");
+                calTemp(function (num1, num2) {
+                    return num1 + "+" + num2 + "=" + (Number(num1) + Number(num2));
+                });
+            });
+
+            $("#miBtn").click(function () {
+                console.log("miBtn");
+                calTemp(function (num1, num2) {
+                    return num1 + "-" + num2 + "=" + (Number(num1) - Number(num2));
+                });
+            });
+
+            $("#mulBtn").click(function () {
+                console.log("mulBtn");
+                calTemp(function (num1, num2) {
+                    return num1 + "×" + num2 + "=" + Number(num1) * Number(num2);
+                });
+            });
+
+            $("#divBtn").click(function () {
+                console.log("divBtn");
+                calTemp(function (num1, num2) {
+                    return num1 + "÷" + num2 + "=" + Number(num1) / Number(num2);
+                });
+            });
+        });
+
+        function calTemp(func) {
+            var num1 = $("#a").val();
+            var num2 = $("#b").val();
+
+            $("#result").empty();
+            $("#result").append("<div> 웹짱 계산기 </div>");
+            $("#result").append("<div>" + func(num1, num2) + "</div>");
+            $("#result").append("<div> 연락처 : swsw@swsw.com </div>");
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 내용 -->
+
+    <br />
+    <div id="cal">
+        <br />
+        <input type="number" name="a" id="a" class="inputNum" />
+        <br />
+        <input type="number" name="b" id="b" class="inputNum" />
+        <br />
+        <br />
+        <br />
+        <button id="addBtn" class="calBtn">+</button>
+        <button id="miBtn" class="calBtn">-</button>
+        <button id="mulBtn" class="calBtn">×</button>
+        <button id="divBtn" class="calBtn">÷</button>
+        <br />
+        <br />
+        <button id="removeBtn">지우기</button>
+        <br />
+        <br />
+        <span id="result"></span>
+    </div>
+</body>
+
+</html>
