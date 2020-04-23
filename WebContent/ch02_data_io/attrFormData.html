@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(function () {
+            //등록을 누르면(이벤트)
+            //글번호를 사용하지 않도록 조정하고 write.jsp로 데이터를 보내서 처리한다.
+            $("#writeBtn").click(function () {
+                alert("쓰기 버튼 클릭");
+                // $("#no").attr("disabled", "disabled");
+                $("#dataForm").attr("action", "write.jsp");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <form method="post" id="dataForm">
+        <input name="no" value="1" type="hidden" id="no">
+        제목 :
+        <input name="title"><br>
+        <button id="writeBtn">등록</button>
+        <button id="updateBtn">수정</button>
+    </form>
+</body>
+
+</html>

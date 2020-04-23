@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <style>
+        #big {
+            width: 600px;
+            height: 400px;
+        }
+
+        .small {
+            width: 140px;
+            height: 120px;
+            border: 2px solid #ddd;
+        }
+
+        /* 작은 이미지에 마우스가 올라가면 포인터 변경, 테두리를 진한 회색으로 바꾼다. */
+        .small:hover {
+            cursor: pointer;
+            border: 2px solid #aaaa;
+        }
+    </style>
+    <script>
+        $(function ()
+        //작은 이미지를 클릭하면(이벤트) 큰 이미지가 작은 이미지로 바뀐다.small
+        //(작은이미지 src->큰이미지 src)
+        {
+            $(".small").click(function () {
+                var src = $(this).attr("src");
+                $("#big").attr("src", src);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div><img alt="수지1" src="/image/go.jpg" id="big">
+    </div>
+    <div>
+        <img alt="수지2" src="/image/gong.jpg" class="small">
+        <img alt="수지3" src="/image/hong.jpg" class="small">
+        <img alt="수지4" src="/image/lee.jpg" class="small">
+        <img alt="수지5" src="/image/park.jpg" class="small">
+
+    </div>
+</body>
+
+</html>
