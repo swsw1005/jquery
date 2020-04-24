@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style></style>
+    <script>
+        // 스크립트
+
+        $(function () {
+            // text가져오기 클릭 >> 내용 가져와서 뿌린다
+            $("#textBtn").click(function () {
+                console.log("textBtn!!!");
+                var str = $("#textData").text();
+                console.log(str);
+            });
+
+            $("#htmlBtn").click(function () {
+                console.log("htmlBtn!!!");
+                var str = $("#htmlData").text();
+                console.log(str);
+            });
+
+
+            $("#ta").keyup(function () {
+
+                $("#result").html($("#ta").val());
+
+
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <!-- 내용 -->
+
+    <div id="textData"><span>text() 데이터변경</span></div>
+    <div id="htmlData"><span>html() 데이터변경</span></div>
+    <hr />
+    <button id="textBtn">text 데이터 가져오기</button>
+    <button id="htmlBtn">html 데이터 가져오기</button>
+
+    <hr>
+    <hr>
+
+    <textarea name="ta" id="ta" cols="30" rows="10"></textarea>
+    <hr>
+    <div id="result"></div>
+
+</body>
+
+</html>
