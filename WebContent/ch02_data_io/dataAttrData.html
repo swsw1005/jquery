@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        .dataRow {
+            width: 300px;
+            border: 1px solid red;
+            background: cyan;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        // 스크립트
+
+        $(function () {
+
+            $(".dataRow").click(function () {
+
+                var no = $(this).data("no");
+                console.log("no = " + no);
+                var writer = $(this).data("writer");
+                console.log("writer = " + writer);
+
+            });
+
+
+
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <!-- 내용 -->
+
+    <h1>공지사항</h1>
+
+    <ul>
+        <li class="dataRow" data-no="11" data-writer="lee">자바는 컴퓨터 언어</li>
+        <li class="dataRow" data-no="15" data-writer="kim">데이터 처리하는 오라클</li>
+    </ul>
+
+
+</body>
+
+</html>

@@ -4,15 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>글수정</title>
 </head>
 <body>
-<%
-//자바 구문
-request.setCharacterEncoding("UTF-8");
-%>
-<h1>글쓰기</h1>
-글번호: ${param.no }<br>
+<h1>글수정</h1>
+번호: ${param.no }<br>
 제목: ${param.title }<br>
 <a href="attrFormData.html">입력 페이지 이동</a>
 </body>

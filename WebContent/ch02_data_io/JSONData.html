@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style></style>
+    <script>
+        // 스크립트
+        var member = {};
+
+        member.id = "test";
+        member.name = "홍길동";
+        member.birth = "1992.10.05";
+        member.tel = "010-2529-5119";
+        member.printInfo = function () {
+            console.log("member.id");
+            console.log(member.id);
+            console.log("member.name");
+            console.log(member.name);
+            console.log("member.birth");
+            console.log(member.birth);
+            console.log("member.tel");
+            console.log(member.tel);
+        };
+
+        member.printInfo();
+
+        var members = [{ "id": "test", "name": "홍길동", "tel": "010-1234-1234" },
+        { "id": "webjjang", "name": "이영환", "tel": "010-2529-1234" }];
+
+
+        $(function () {
+            for (i = 0; i < members.length; i++) {
+                // alert(members[i].id);
+                var str = "<li>"
+                str += members[i].id + " ";
+                str += members[i].name + " ";
+                str += members[i].tel;
+                str += "</li>";
+                $("#memberList").append(str);
+            }
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <!-- 내용 -->
+
+    <ul id="memberList"></ul>
+</body>
+
+</html>
